@@ -1,0 +1,25 @@
+server:
+  port: 8084
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: smietnikowe665@gmail.com
+    password: vuemshpjwbnihvln
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: test
+    password: test
+
+
+rabbit:
+  email-queue: email_queue
+
