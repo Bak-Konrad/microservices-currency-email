@@ -11,8 +11,9 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class EmailDataMQListenerService {
     private final EmailService emailService;
+
     @RabbitListener(queues = "${rabbit.email-queue}")
-    public void handleEmailData(ConvertResultData convertResultData){
+    public void handleEmailData(ConvertResultData convertResultData) {
         emailService.sendMessage(convertResultData);
         log.info("Message model received: {}", convertResultData);
     }
