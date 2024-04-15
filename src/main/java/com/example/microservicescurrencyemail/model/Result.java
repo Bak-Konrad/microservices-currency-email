@@ -17,4 +17,5 @@ public class Result {
     private BigDecimal amount;
     private BigDecimal result;
     private BigDecimal rate;
+
 }

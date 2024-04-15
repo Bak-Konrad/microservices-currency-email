@@ -8,12 +8,10 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-
 @Service
 @RequiredArgsConstructor
 public class EmailService {
     private final JavaMailSender mailSender;
-
 
     public SimpleMailMessage prepareMessage(ConvertResultData model) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
@@ -23,7 +21,6 @@ public class EmailService {
         mailMessage.setText(prepareTextForMessage(model.getResult()));
         return mailMessage;
     }
-
 
     @Async
     public void sendMessage(ConvertResultData convertResultData) {
@@ -38,7 +35,7 @@ public class EmailService {
                 .append("Amount: ").append(result.getAmount()).append("\n")
                 .append("Result: ").append(result.getResult()).append("\n")
                 .append("Exchange Rate: ").append(result.getRate());
-
         return message.toString();
     }
+
 }
